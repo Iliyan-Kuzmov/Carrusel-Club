@@ -1,0 +1,7 @@
+h1,h2,h3, h4 {
+    font-size: larger;
+    color: black;
+}
+body {
+    background-color: rgb(198, 226, 43);
+}
