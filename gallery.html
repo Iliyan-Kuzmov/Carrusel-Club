@@ -27,19 +27,18 @@
 </header>
 
 <section class="gallery">
-    <!-- Контейнер за текущото изображение -->
+
     <div class="image-container">
         <img id="gallery-image" src="image2.jpg" alt="Image 1">
     </div>
 
-    <!-- Навигационни бутони за слайдшоу -->
     <button id="prev" class="nav-button">&#10094;</button>
     <button id="next" class="nav-button">&#10095;</button>
     
 </section>
 
 <script>
-    // Массив със снимки за галерията
+
     const images = [
         'image2.jpg',
         'image1.jpg', 
@@ -48,7 +47,6 @@
 
     let currentIndex = 0;
 
-    // Функции за превъртане на снимки
     const updateImage = () => {
         const imageElement = document.getElementById('gallery-image');
         imageElement.src = images[currentIndex];
@@ -72,7 +70,7 @@
         updateImage();
     });
 
-    // Инициализация на първото изображение
+    
     updateImage();
 </script>
 <footer>

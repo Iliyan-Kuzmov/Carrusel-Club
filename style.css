@@ -1,4 +1,4 @@
-/* Общи настройки */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@ body {
     color: white;
 }
 
-/* HEADER */
+
 header {
     display: flex;
     align-items: center;
@@ -30,7 +30,6 @@ header {
     height: 40px;
 }
 
-/* НАВИГАЦИЯ */
 .nav-links {
     list-style: none;
     display: flex;
@@ -53,7 +52,6 @@ header {
     text-decoration: underline;
 }
 
-/* MOBILE MENU */
 .menu-toggle {
     font-size: 30px;
     color: white;
@@ -61,7 +59,7 @@ header {
     display: none;
 }
 
-/* Фон за Home */
+
 .full-background {
     background: url('image1.jpg') no-repeat center center/cover;
     height: 100vh;
@@ -76,7 +74,7 @@ header {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
-/* РЕСПОНЗИВЕН ДИЗАЙН */
+
 @media (max-width: 768px) {
     header {
         flex-direction: row;
@@ -117,7 +115,6 @@ header {
     
 }
 
-/* Ефект на неонова светлина */
 @keyframes glow {
     from {
         text-shadow: 0 0 10px rgba(154, 92, 127, 0.8), 
@@ -131,7 +128,7 @@ header {
     }
 }
 
-/* Анимация за плавно появяване */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -143,7 +140,7 @@ header {
     }
 }
 
-/* About секция */
+
 .about-content {
     text-align: center;
     padding: 100px 20px;
@@ -171,7 +168,7 @@ header {
     animation: fadeIn 2s ease-in-out;
 }
 
-/* Анимация за текст */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -184,14 +181,12 @@ header {
 }
 
 
-/* Галерия */
 .gallery {
     text-align: center;
     padding: 100px 20px;
     position: relative;
 }
 
-/* Контейнер за изображението */
 .image-container {
     width: 80%;
     margin: 0 auto;
@@ -201,14 +196,14 @@ header {
 #gallery-image {
     width: 100%;
     height: auto;
-    max-width: 500px;  /* Размер на изображенията */
+    max-width: 500px;  
     border-radius: 10px;
     transition: transform 0.5s ease-in-out;
     opacity: 0;
     animation: fadeIn 1s forwards;
 }
 
-/* Навигационни бутони */
+
 .nav-button {
     position: absolute;
     top: 50%;
@@ -235,7 +230,7 @@ header {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-/* Анимация на изображенията */
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -247,7 +242,7 @@ header {
     }
 }
 
-/* Респонсивен дизайн за мобилни устройства */
+
 @media (max-width: 768px) {
     #gallery-image {
         max-width: 90%;
@@ -260,7 +255,7 @@ header {
     }
 }
 
-/* Меню */
+
 .menu {
     text-align: center;
     padding: 100px 20px;
@@ -269,11 +264,11 @@ header {
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 снимки на ред */
+    grid-template-columns: repeat(2, 1fr); 
     grid-gap: 30px;
 }
 
-/* Всеки елемент от менюто */
+
 .menu-item {
     text-align: center;
     border-radius: 10px;
@@ -283,7 +278,7 @@ header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Стил за изображенията */
+
 .menu-item img {
     width: 100%;
     height: auto;
@@ -291,19 +286,19 @@ header {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Ховър ефект за елементите от менюто */
+
 .menu-item:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
 }
 
-/* Респонсивен дизайн за малки екрани */
+
 @media (max-width: 768px) {
     .menu-items {
-        grid-template-columns: 1fr; /* 1 снимка на ред за по-малки екрани */
+        grid-template-columns: 1fr; 
     }
 }
-/* Стилове за менюто */
+
 .menu {
     text-align: center;
     padding: 100px 20px;
@@ -312,11 +307,11 @@ header {
 
 .menu-items {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 снимки на ред */
+    grid-template-columns: repeat(2, 1fr); 
     grid-gap: 30px;
 }
 
-/* Всеки елемент от менюто */
+
 .menu-item {
     text-align: center;
     border-radius: 10px;
@@ -326,7 +321,6 @@ header {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Стил за изображенията */
 .menu-img {
     width: 100%;
     height: auto;
@@ -335,27 +329,27 @@ header {
     cursor: pointer;
 }
 
-/* Ховър ефект за елементите от менюто */
+
 .menu-item:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
 }
 
-/* Модално окно */
+
 .modal {
-    display: none; /* Няма да се показва по подразбиране */
+    display: none; 
     position: fixed;
-    z-index: 1; /* Показва се на върха */
+    z-index: 1; 
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7); /* Черен фон с прозрачност */
+    background-color: rgba(0, 0, 0, 0.7); 
     overflow: auto;
     padding-top: 60px;
 }
 
-/* Съдържанието на модалното окно */
+
 .modal-content {
     margin: auto;
     display: block;
@@ -364,7 +358,7 @@ header {
     border-radius: 10px;
 }
 
-/* Бутона за затваряне */
+
 .close {
     color: #fff;
     font-size: 40px;
@@ -382,7 +376,6 @@ header {
     cursor: pointer;
 }
 
-/* Footer стилове */
 footer {
     background-color: rgba(0, 0, 0, 0.8);
     color: white;
@@ -391,7 +384,7 @@ footer {
     width: 100%;
     position: relative;
     bottom: 0;
-    margin-top: 20px; /* разстояние между съдържанието и footer-а */
+    margin-top: 20px; 
 }
 
 .footer-content p {
@@ -406,4 +399,75 @@ footer {
 
 .footer-content a:hover {
     text-decoration: underline;
+}
+
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact h1 {
+    font-size: 36px;
+    color: #fff;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.contact p {
+    font-size: 18px;
+    color: #ccc;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+
+.contact-info {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.contact-info p {
+    font-size: 16px;
+    color: #fff;
+    margin: 10px 0;
+}
+
+.contact-info a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.map {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
