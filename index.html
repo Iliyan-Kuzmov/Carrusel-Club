@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Carrusel</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="https://carruselclub.com/content/assets/themes/carrusel/images/logo_typeface_carrusel_white.svg" 
+                 alt="Carrusel Logo">
+        </a>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <!-- Mobile menu button -->
+    <div class="menu-toggle">&#9776;</div>
+</header>
+
+<!-- Fullscreen Background Section -->
+<div class="full-background">
+    <h1>Welcome to Carrusel Club</h1>
+</div>
+
+<script>
+    // Toggle mobile menu
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        document.querySelector('.nav-links').classList.toggle('active');
+    });
+</script>
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Carrusel Club. All rights reserved.</p>
+    </div>
+</footer>
+
+</body>
+</html>

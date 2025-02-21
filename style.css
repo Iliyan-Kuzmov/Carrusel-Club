@@ -1,7 +1,409 @@
-h1,h2,h3, h4 {
-    font-size: larger;
-    color: black;
+/* Общи настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
 body {
-    background-color: rgb(198, 226, 43);
+    font-family: Arial, sans-serif;
+    background-color: black;
+    color: white;
+}
+
+/* HEADER */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 40px;
+}
+
+/* НАВИГАЦИЯ */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* MOBILE MENU */
+.menu-toggle {
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+/* Фон за Home */
+.full-background {
+    background: url('image1.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.full-background h1 {
+    font-size: 48px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+/* РЕСПОНЗИВЕН ДИЗАЙН */
+@media (max-width: 768px) {
+    header {
+        flex-direction: row;
+        padding: 10px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(0, 0, 0, 0.9);
+        width: 200px;
+        padding: 10px;
+        border-radius: 10px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+}
+
+.full-background h1 {
+    font-size: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 0 10px rgba(154, 92, 127, 0.8), 
+                 0 0 20px rgba(154, 92, 127, 0.8), 
+                 0 0 30px rgba(154, 92, 127, 0.8);
+    animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out;
+    
+}
+
+/* Ефект на неонова светлина */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(154, 92, 127, 0.8), 
+                     0 0 20px rgba(154, 92, 127, 0.8), 
+                     0 0 30px rgba(154, 92, 127, 0.8);
+    }
+    to {
+        text-shadow: 0 0 15px rgba(154, 92, 127, 0.8), 
+                     0 0 25px rgba(154, 92, 127, 0.8), 
+                     0 0 35px rgba(154, 92, 127, 0.8);
+    }
+}
+
+/* Анимация за плавно появяване */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* About секция */
+.about-content {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.about-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    color: #fff;
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(154, 92, 127, 0.8), 
+                 0 0 20px rgba(154, 92, 127, 0.8), 
+                 0 0 30px rgba(154, 92, 127, 0.8);
+    animation: glow 1.5s infinite alternate, fadeIn 2s ease-in-out;
+}
+
+.about-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    color: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    line-height: 1.6;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Анимация за текст */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Галерия */
+.gallery {
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+/* Контейнер за изображението */
+.image-container {
+    width: 80%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+#gallery-image {
+    width: 100%;
+    height: auto;
+    max-width: 500px;  /* Размер на изображенията */
+    border-radius: 10px;
+    transition: transform 0.5s ease-in-out;
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+}
+
+/* Навигационни бутони */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 24px;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+}
+
+#prev {
+    left: 20px;
+}
+
+#next {
+    right: 20px;
+}
+
+.nav-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Анимация на изображенията */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Респонсивен дизайн за мобилни устройства */
+@media (max-width: 768px) {
+    #gallery-image {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    #gallery-image {
+        max-width: 100%;
+    }
+}
+
+/* Меню */
+.menu {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #111;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 снимки на ред */
+    grid-gap: 30px;
+}
+
+/* Всеки елемент от менюто */
+.menu-item {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #222;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стил за изображенията */
+.menu-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Ховър ефект за елементите от менюто */
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+/* Респонсивен дизайн за малки екрани */
+@media (max-width: 768px) {
+    .menu-items {
+        grid-template-columns: 1fr; /* 1 снимка на ред за по-малки екрани */
+    }
+}
+/* Стилове за менюто */
+.menu {
+    text-align: center;
+    padding: 100px 20px;
+    background-color: #111;
+}
+
+.menu-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 снимки на ред */
+    grid-gap: 30px;
+}
+
+/* Всеки елемент от менюто */
+.menu-item {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #222;
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Стил за изображенията */
+.menu-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+/* Ховър ефект за елементите от менюто */
+.menu-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.6);
+}
+
+/* Модално окно */
+.modal {
+    display: none; /* Няма да се показва по подразбиране */
+    position: fixed;
+    z-index: 1; /* Показва се на върха */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Черен фон с прозрачност */
+    overflow: auto;
+    padding-top: 60px;
+}
+
+/* Съдържанието на модалното окно */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 10px;
+}
+
+/* Бутона за затваряне */
+.close {
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    position: absolute;
+    top: 60px;
+    right: 40px;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Footer стилове */
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    margin-top: 20px; /* разстояние между съдържанието и footer-а */
+}
+
+.footer-content p {
+    margin-bottom: 0px;
+}
+
+.footer-content a {
+    color: #f1f1f1;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
 }

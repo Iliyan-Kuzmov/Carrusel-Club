@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Carrusel</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+            <img src="https://carruselclub.com/content/assets/themes/carrusel/images/logo_typeface_carrusel_white.svg" 
+                 alt="Carrusel Logo">
+        </a>
+    </div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="gallery">
+    <!-- Контейнер за текущото изображение -->
+    <div class="image-container">
+        <img id="gallery-image" src="image2.jpg" alt="Image 1">
+    </div>
+
+    <!-- Навигационни бутони за слайдшоу -->
+    <button id="prev" class="nav-button">&#10094;</button>
+    <button id="next" class="nav-button">&#10095;</button>
+    
+</section>
+
+<script>
+    // Массив със снимки за галерията
+    const images = [
+        'image2.jpg',
+        'image1.jpg', 
+        'image3.jpg', 
+    ];
+
+    let currentIndex = 0;
+
+    // Функции за превъртане на снимки
+    const updateImage = () => {
+        const imageElement = document.getElementById('gallery-image');
+        imageElement.src = images[currentIndex];
+    };
+
+    document.getElementById('next').addEventListener('click', () => {
+        if (currentIndex < images.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        updateImage();
+    });
+
+    document.getElementById('prev').addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = images.length - 1;
+        }
+        updateImage();
+    });
+
+    // Инициализация на първото изображение
+    updateImage();
+</script>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Carrusel Club. All rights reserved.</p>
+    </div>
+</footer>
+</body>
+</html>
